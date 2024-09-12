@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    /* background: linear-gradient(120deg, rgba(255,220,220,1) 0%, rgba(220,255,220,1) 50%, rgba(220,220,255,1) 100%); */
+    background: linear-gradient(160deg, rgba(248,248,255,1) 0%, rgba(135,206,250,1) 50%, rgba(255,228,225,1) 100%);
+
+    font-family: "poppins", sans-serif;
+    display: flex;
+    padding-top: 3rem;
+    flex-wrap: wrap;
+    margin: 0;
+    align-items: center; 
+    min-height: 100vh;
+}
+.card-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+.card{
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(12, 103, 126);
+    width: 750px;
+    transform: scale(1);
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 50ms ease-in-out;
+    border-radius: 8px;
+    transition-duration: 500ms;
+    color:#fefefe ;
+    box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.2);
+    align-items: center;
+}
+
+.card:hover{
+    transition-duration: 500ms;
+    transition-timing-function: ease-in-out;    
+    transform: scale(1.03);
+    box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.1);
+}
+
+.card-inner{
+    align-self: center;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: fit-content;
+    justify-content: center;
+}
+
+
+.quote-text{
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    height: fit-content;
+    padding: 20px 0px;
+}
+.img-icon{
+    position: absolute;
+    top: 0px;
+    left: -20px;
+}
+.author-name{
+    margin-left: auto;
+    width: fit-content;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #e04668;
+}
+.generate-button{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 34px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fefefe;
+    border-radius: 8px;
+    border: none;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: rgb(12, 103, 126);
+    cursor: pointer;
+    background: linear-gradient(130deg,  rgb(12, 103, 126) 10%,rgb(12, 103, 126)20%,rgb(12, 103, 126) 500%);
+
+}
+.generate-button:hover{
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background: linear-gradient(130deg,  rgb(12, 103, 126) 10%, rgb(112, 163, 175)20%, rgb(38, 141, 167) 500%);
+}
+
+.buttons{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.capture-btn{
+    margin-left: 20px;
+    margin-right: auto;
+    padding: 15px 34px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fefefe;
+    border-radius: 8px;
+    border: none;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: rgb(12, 103, 126);
+    cursor: pointer;
+    background: linear-gradient(130deg,  rgb(12, 103, 126) 10%,rgb(12, 103, 126)20%,rgb(12, 103, 126) 500%);
+}
+.capture-btn:hover{
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background: linear-gradient(130deg,  rgb(12, 103, 126) 10%, rgb(112, 163, 175)20%, rgb(38, 141, 167) 500%);
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 95%;
+        min-height: 300px;
+    }
+    .quote-text{
+        font-size: 1.6rem;
+        padding: 20px 0px;
+    }
+    .img-icon{
+        top: -10px;
+        left: -20px;
+    }
+    .author-name{
+        margin-top: 20px;
+        font-size: 0.9rem;
+    }
+}
