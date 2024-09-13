@@ -184,13 +184,172 @@ const excusesData = [
   
 
 
+  const xcuseTextEl = document.getElementById('xcuse-text');
+  const generateBtn = document.getElementById('generatebutton');
+
+
+
+
+function displayObject (){
+
+    const objectarray = excusesData.filter(objects => {
+       return objects.type === "object" 
+    })
+       const object =(objectarray[Math.floor(Math.random() * objectarray.length)]);
+        
+    //    console.log('object', object.value);     
+       
+       
+       objectValue = object.value     
+
+       return object.value;
+
+}
+
+
+function displayEvent (){
+
+    const eventarray = excusesData.filter(events => {
+       return events.type === "event" 
+    })
+        
+       const event =(eventarray[Math.floor(Math.random() * eventarray.length)]);
+        
+    //    console.log('event', event.value); 
+       
+       
+       eventValue = event.value     
+
+       return event.value;
+
+}
+
+function displayAnimal (){
+
+    const animalarray = excusesData.filter(animals => {
+       return animals.type === "animal" 
+    })
+        
+       const animal =(animalarray[Math.floor(Math.random() * animalarray.length)]);
+        
+       
+       animalValue = animal.value     
+
+       return animal.value;
+}
+
+
+function displayAction (){
+
+    const actionarray = excusesData.filter(actions => {
+       return actions.type === "action" 
+    })
+        
+       const action =(actionarray[Math.floor(Math.random() * actionarray.length)]);
+        
+       actionValue = action.value     
+
+       return action.value;
+
+}
+ 
+
+displayObject();
+displayAction();
+displayAnimal();
+displayEvent();
+
+
+ 
+    
+const objectXcuse = displayObject();
+const animalXcuse = displayAnimal();
+const actionXcuse = displayAction();
+const eventXcuse = displayEvent();
+
+
+
+function generateXcuse () {
+
+ 
+    
+
+    const templatearray = excusesData.filter(templates => {
+        return templates.type === "template" 
+     })
+         
+        const template =(templatearray[Math.floor(Math.random() * templatearray.length)]);
+         
+        console.log('template', template.value);
+    
+        let newXcuse = template.value
+
+
+
+    if( newXcuse.includes('{object}') ){
+       
+     
+        // newXcuse = template.value
+
+        newXcuse = newXcuse.replace(/{object}/g, objectXcuse);
+
+        // newXcuse = newxcus;    
+
+    }
+    
+
+    if( newXcuse.includes('{event}') ){
+        
+        // newXcuse = template.value
+
+        newXcuse = newXcuse.replace(/{event}/g, eventXcuse);
+
+        // newXcuse = newxcus;    
+
+    }
+  
+
+
+    if( newXcuse.includes('{animal}') ){
+       
+        
+        // newXcuse = template.value
+ 
+         newXcuse = newXcuse.replace(/{animal}/g, animalXcuse);
+
+        // newXcuse = newxcus;    
+
+    }
+
+
+
+    if( newXcuse.includes('{action}') ){
+       
+        
+        // newXcuse = template.value
+
+        newXcuse = newXcuse.replace(/{action}/g, actionXcuse);
+
+        // newXcuse = newxcus;    
+
+    }
+
+
+
+    xcuseTextEl.innerText = newXcuse;
+
+}
+ 
 
 
 
 
 
-
-
+generateBtn.addEventListener('click',() => {
+    generateXcuse();    
+    console.log(displayAction());
+    
+});
 
 
 
@@ -201,28 +360,13 @@ const excusesData = [
 
   
 document.getElementById('capture-btn').addEventListener('click', function() {
-    const quoteContainer = document.getElementById('card-capture-container');
+    const xcuseContainer = document.getElementById('card-capture-container');
 
-    html2canvas(quoteContainer).then(canvas => {
+    html2canvas(xcuseContainer).then(canvas => {
         const link = document.createElement('a');
         link.href = canvas.toDataURL('image/png');
-        link.download = 'quote.png';  // Filename of the screenshot
+        link.download = 'xcuse.png';  // Filename of the screenshot
         link.click();  // Trigger download
     });
-    // Use html2canvas to capture the screenshot of the specific div
-    // html2canvas(quoteContainer).then(canvas => {
-    //     // Create an image element
-    //     const img = document.createElement('img');
-    //     img.src = canvas.toDataURL(); // Convert the canvas to a base64 image
-
-    //     img.style.position = 'absolute';
-    //     img.style.right = '50px';
-    //     img.style.bottom = '50px';
-    //     img.style.height = 'auto';
-    //     img.style.width = '250px';
-
-    //     // Optionally, append the image to the body or download it
-    //     document.body.appendChild(img); // This will display the screenshot below
-    // });
 });
 
